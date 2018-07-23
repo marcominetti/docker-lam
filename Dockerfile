@@ -1,6 +1,6 @@
 FROM php:7.1-apache
 
-MAINTAINER mengzhaopeng <qiuranke@gmail.com>
+MAINTAINER Marco Minetti <marco.minetti@novetica.org>
 
 ENV LAM_VERSION 6.4
 ENV LAM_PACKAGE ldap-account-manager-${LAM_VERSION}
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
         libjpeg62-turbo-dev \
         libldap2-dev \
         libmagickwand-dev \
-        libpng12-dev --no-install-recommends \
+        libpng-dev --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ \
            --with-jpeg-dir=/usr/include/ \
